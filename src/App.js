@@ -25,20 +25,32 @@ function App() {
     fetchMovies();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
 
   return (
     <div className="App">
       <h1>Movie List</h1>
-      <ul>
+      <ul className="movie-list">
         {movies.map(movie => (
-          <li key={movie.id}>
-            <h2>{movie.movie}</h2>
-            <p>Rating: {movie.rating}</p>
-            <a href={movie.imdb_url} target="_blank" rel="noopener noreferrer">
-              View on IMDb
-            </a>
+          <li key={movie.id} className="movie-item">
+            <img
+              src={process.env.PUBLIC_URL + '/' + movie.image}
+              alt={movie.movie}
+              className="movie-image"
+            />
+            <div className="movie-details">
+              <h2 className="movie-title">{movie.movie}</h2>
+              <p className="movie-rating">Rating: {movie.rating}</p>
+              <a
+                href={movie.imdb_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="imdb-link"
+              >
+                View on IMDb
+              </a>
+            </div>
           </li>
         ))}
       </ul>

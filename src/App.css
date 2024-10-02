@@ -36,3 +36,101 @@
     transform: rotate(360deg);
   }
 }
+/* Reset some default styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+  color: #555;
+}
+
+/* Movie List Styles */
+.movie-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.movie-item {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.movie-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Movie Image */
+.movie-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Movie Details */
+.movie-details {
+  padding: 20px;
+}
+
+.movie-title {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.movie-rating {
+  margin: 0 0 15px;
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.imdb-link {
+  text-decoration: none;
+  color: #e44d26;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.imdb-link:hover {
+  color: #bf3813;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movie-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-image {
+    height: 200px;
+  }
+}
+
